@@ -1,0 +1,1 @@
+const words = ['Criticar','Anteojos','Popular','Apellido','Indicaciones','Pan','Reclinar','Nacer','Talco','Insecto','Rayado','Grupo','Mantenimiento','Inflamar','Soldados','Angustia','Propaganda','Odio','Cerdas','Transporte'];
