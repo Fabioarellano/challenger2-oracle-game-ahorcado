@@ -4,6 +4,27 @@ let vidas = 3;
 let letraDigitada;
 let arregloLetraDigitada = [];
 let palab="";
+let PalabrasAcertadas= 0;
+
+const terminarJuego=()=>{
+    document.removeEventListener('keydown', letraPulsada);
+};
+
+const letraCorrecta = letra=>{
+    const palabra = palabraSeleccionada;
+    for (let index = 0; index < palabra.length; index++) {
+        if(palabra[index]===letra){
+            PalabrasAcertadas++
+            console.log(palabra[index] + " indice: " + index + " Aciertos: " + PalabrasAcertadas);
+        }
+    }
+    //terminar juego si las PalabrasAcertadas es igual a la longitud de la palabra
+    if(PalabrasAcertadas=== palabra.length) {
+        alert("Ganaste, la pabra es: "+ palabra);
+        terminarJuego();
+    } 
+}
+
 
 //determinar si la letra es correcta o no pertenece a la palabra a adivinar
 //tambien, la letra digitada se ingresa al arreglo de letras digitadas.
@@ -11,6 +32,9 @@ const letrasIngresadas = letra => {
     if(palabraSeleccionada.includes(letra)) {
         //letraCorrecta(letra);
         console.log("Letra correcta: " + letra);
+        letraCorrecta(letra);
+        //recorrer palabraSeleccionada para saber, cuantas letras correctas hay en ella, y guardar la posicion
+        //para luego imprimir.
     } else {
         //letraErrada();
         console.log("letra errada: " + letra);
