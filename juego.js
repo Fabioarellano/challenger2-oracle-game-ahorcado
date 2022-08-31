@@ -1,21 +1,38 @@
-
+//Definir variables
 let palabraSeleccionada;
 let vidas = 3;
 let letraDigitada;
-//let letra;
+let arregloLetraDigitada = [];
 let palab="";
 
+//determinar si la letra es correcta o no pertenece a la palabra a adivinar
+//tambien, la letra digitada se ingresa al arreglo de letras digitadas.
+const letrasIngresadas = letra => {
+    if(palabraSeleccionada.includes(letra)) {
+        //letraCorrecta(letra);
+        console.log("Letra correcta: " + letra);
+    } else {
+        //letraErrada();
+        console.log("letra errada: " + letra);
+    }
+    //addLetter(letter);
+    arregloLetraDigitada.push(letra);
+    console.log(arregloLetraDigitada);
+};
 
+//Detectar la letra pulsada por teclado
 const letraPulsada = event => {
     let letraDigitada = event.key.toUpperCase();
    
     //if(letraDigitada.match(/^[a-zñ]$/i) && !usedLetters.includes(letraDigitada)) {
-        if(letraDigitada.match(/^[a-zñ]$/i)) {    
-    //letterInput(letraDigitada);
-        palab = palab + " " + letraDigitada;
-        console.log(letraDigitada);
-        document.getElementById("colocaletra").innerHTML= palab;
-    };
+        //falta ingresar letra digitada al arreglo con letterInput ojojojo
+        if(letraDigitada.match(/^[a-z]$/i) && !arregloLetraDigitada.includes(letraDigitada) ) {    
+        //letterInput(letraDigitada);
+            palab = palab + " " + letraDigitada;
+            console.log(letraDigitada);
+            document.getElementById("colocaletra").innerHTML= palab;
+            letrasIngresadas(letraDigitada);
+        };
 };
 
 
@@ -49,7 +66,7 @@ const selectAleatorioPalabra = () => {
     alert(palabraSeleccionada);
 };
 
-//Ejecucion del juego
+//Ejecucion del juego del ahoracado
 selectAleatorioPalabra();
 colocarLetra();
 colocarGuionPalabra();
