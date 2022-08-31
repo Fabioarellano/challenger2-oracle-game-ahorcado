@@ -9,3 +9,20 @@ header {
 body {
     background: #F3F5FC;
 }
+
+#letra{
+    
+    font-size: 40px;
+    /* background:red; */
+    color: green;
+     
+    float: buttom;
+    /* text-decoration: underline  black; */
+
+}
+
+#frase{
+    font-size: 45px;
+    text-decoration-line:none;
+    float: buttom;
+}
