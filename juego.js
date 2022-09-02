@@ -1,41 +1,46 @@
 //Definir variables
 let palabraSeleccionada;
-let vidas = 3;
+let vidas = 6;
 let letraDigitada;
 let arregloLetraDigitada = [];
 let palab="";
 let PalabrasAcertadas= 0;
-//let word=[];
 let PalabraAdi;
+
+const dibujAhorcado = document.getElementById("dibujarHombre")
+//inicia con la base de la ahoracado
+dibujAhorcado.src= "imagenes/0" + vidas + ".png";
+
 
 const terminarJuego=()=>{
     document.removeEventListener('keydown', letraPulsada);
 };
 
 const mostarLetraAcertada= letra=>{
-    
     document.getElementById("colocaletraAcertada").innerHTML = letra
 }
 
+//disminuir el numero de vidas establecidas
 const letraIncorrecta = ()=>{
-    vidas--; //disminuir el numero de vidas establecidas
+    vidas--; 
+    console.log(vidas);
+    dibujAhorcado.src= "imagenes/0" + vidas + ".png";
+    console.log(dibujAhorcado.src);
+
+    
     console.log("Vidas Restantes: " + vidas);
     if (vidas===0) {
         terminarJuego();
-        alert("Perdiste: Fin del juego")
+        alert("Perdiste: Fin del juego :-( 🤪")
     }
 }
 
 const colocarLetras = letra=>{
-    //console.log(palabraSeleccionada);
     let gion="";
- 
     for (let index = 0; index < letra.length; index++) {
-        
         gion += letra[index] + " ";
     }
     document.getElementById("frase").innerHTML = gion;
-    //PalabraAdi = gion;
 };
 
 const letraCorrecta = letra=>{
@@ -48,42 +53,33 @@ const letraCorrecta = letra=>{
             console.log(palabra[index] + " indice: " + index + " Aciertos: " + PalabrasAcertadas);
         }
         else{
-            word= word +  PalabraAdi[index * 2] + " ";
+            word= word +  PalabraAdi[index * 2] + " ";//mejorar la impresion grafica
         }
     }
     PalabraAdi = word;
-    alert(PalabraAdi.length);
+    //alert(PalabraAdi.length);
     mostarLetraAcertada(PalabraAdi); //verificar no funciona
     colocarLetras(PalabraAdi);
-    //console.log("parcial: " + word);
     //terminar juego si las PalabrasAcertadas es igual a la longitud de la palabra
     if(PalabrasAcertadas=== palabra.length) {
-        alert("Ganaste, la palabra es: "+ word);
+        alert("Ganaste 😀, la palabra es: "+ word);
         for (let index = 0; index < word.length; index++) {
-            
             console.log(word[index]);
-            
         }
         terminarJuego();
     } 
 }
 
-
 //determinar si la letra es correcta o no pertenece a la palabra a adivinar
 //tambien, la letra digitada se ingresa al arreglo de letras digitadas.
 const letrasIngresadas = letra => {
     if(palabraSeleccionada.includes(letra)) {
-        //letraCorrecta(letra);
         console.log("Letra correcta: " + letra);
         letraCorrecta(letra);
-        //recorrer palabraSeleccionada para saber, cuantas letras correctas hay en ella, y guardar la posicion
-        //para luego imprimir.
     } else {
-        //letraErrada();
         console.log("letra errada: " + letra);
         letraIncorrecta(letra);
     }
-    //addLetter(letter);
     arregloLetraDigitada.push(letra);
     console.log(arregloLetraDigitada);
 };
@@ -91,36 +87,24 @@ const letrasIngresadas = letra => {
 //Detectar la letra pulsada por teclado
 const letraPulsada = event => {
     let letraDigitada = event.key.toUpperCase();
-   
-    //if(letraDigitada.match(/^[a-zñ]$/i) && !usedLetters.includes(letraDigitada)) {
-        //falta ingresar letra digitada al arreglo con letterInput ojojojo
         if(letraDigitada.match(/^[a-z]$/i) && !arregloLetraDigitada.includes(letraDigitada) ) {    
-        //letterInput(letraDigitada);
             palab = palab + " " + letraDigitada;
-            //console.log(letraDigitada);
             document.getElementById("colocaletra").innerHTML= palab;
             letrasIngresadas(letraDigitada);
         };
 };
 
-
 const colocarLetra = ()=>{
-    //console.log(palabraSeleccionada);
     let pal="";
     console.log(palabraSeleccionada.length);
     palabraSeleccionada.forEach(letra =>{
         pal += letra+" ";
-      //  console.log(letra);
         document.getElementById("letra").innerHTML = pal;
     });
-    //  console.log(_letra);
-    // document.getElementById("letra").innerHTML = _letra;
  };
 
 const colocarGuionPalabra = ()=>{
-    //console.log(palabraSeleccionada);
     let gion="";
-    //console.log(palabraSeleccionada.length);
     palabraSeleccionada.forEach(() => {
         gion += "_ ";
      });
@@ -139,5 +123,6 @@ const selectAleatorioPalabra = () => {
 selectAleatorioPalabra();
 colocarLetra();
 colocarGuionPalabra();
+
 document.addEventListener('keydown', letraPulsada);
 
