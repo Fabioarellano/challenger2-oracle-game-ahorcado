@@ -1,1 +1,1 @@
-const arregloPalabras = ['Criticar','Anteojos','Popular','Apellido','Indicaciones','Pan','Reclinar','Nacer','Talco','Insecto','Rayado','Grupo','Mantenimiento','Inflamar','Soldados','Angustia','Propaganda','Odio','Cerdas','Transporte'];
+const arregloPalabras = ['criticar','anteojos','popular','apellido','pan','reclinar','nacer','talco','insecto','rayado','grupo','inflamar','soldados','angustia','odio','cerdas','momia','html','windows','linux','teclado','memoria','programa','java','tableta','puente','toronto','colombia','perro','pastel'];

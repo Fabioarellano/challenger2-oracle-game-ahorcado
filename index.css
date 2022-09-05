@@ -76,6 +76,14 @@ body {
     color: #45caf3;
     font-weight: bold;
   }
+
+  .mensaje{
+    text-align:center;
+    /* margin-left: 680; */
+    font-size: 40px;
+    color: #0a3871;
+    font-style: italic;
+  }
 /* #home::after{
     content:"Hombre ahorcado"; }*/
     [type="button"] {
