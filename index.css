@@ -5,7 +5,9 @@ header {
     margin:0;
     color:#0a3871;
 }
-
+html {
+    font-size: 16px;
+  }
 body {
     background: #F3F5FC;
 }
@@ -15,35 +17,84 @@ body {
     font-size: 16px;
     /* background:red; */
     color: green;
-     
-    float: buttom;
-    /* text-decoration: underline  black; */
-
+    font-weight: bold;
 }
 
 #frase{
     font-size: 16px;
     text-decoration-line:none;
-    float: buttom;
+    color:red;
+    font-weight: bold;
+    /* float: buttom; */
 }
 
 #hombre {
     max-width: 100%;
     max-height: 100%;
-    width: 16.75rem;
-    height:16.75rem;
-    border:solid 1px #777 ;
-    background-image: white;
     display: inline-block;
 }
 
-#home::after{
-    content:"Hombre ahorcado";
+
+#hombreAhorcado{
+    width: 100vw;
+    text-align: center;
+    margin-top:  4rem;
+    margin-bottom: 2rem;
+    height: 16.75rem;
 }
 
-#dibujarHombre{
-    width: 50vw;
+.adivinado {
     text-align: center;
-    margin-top:5rem;
-    margin-bottom: 5rem;
-}
+    color: #002462;
+    font-size: 1.8rem;
+  }
+
+.letra {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+  }
+.adivinada, #colocaletraAcertada {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-bottom: solid 1px #002462;
+    margin-left: 0.4rem;
+    line-height: 4.5rem;
+  }
+  
+  .errado {
+    text-align:  center;
+    margin-top: 1rem;
+    color: rgb(235, 14, 25);
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  #colocaletra {
+    text-align:  center;
+    margin-top: 1rem;
+    color: #45caf3;
+    font-weight: bold;
+  }
+/* #home::after{
+    content:"Hombre ahorcado"; }*/
+    [type="button"] {
+        width: 15rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: solid 1px #0a3871;
+        color: #0a3871;
+        background: inherit;
+        cursor: pointer;
+      }
+      
+      .btn-azul {
+        background-color: #0a3871;
+        color: #fff;
+        border-color: #000;
+      }
+      
+      .botones {
+        text-align: center;
+        margin-top: 3rem;
+      }
