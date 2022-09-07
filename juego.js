@@ -1,31 +1,42 @@
-/****************************************** */
+
 //Definir variables
-let palabraSeleccionada="";
-let vidas = 6;
-let letraDigitada="";
-let palabrasAcertadas= 0;
-let palabrasCorrectas=[];
-let palabrasIncorrectas=[];
-let arregloLetraDigitada=[];
+//   let palabraSeleccionada="";
+     let vidas = 6;
+//   let letraDigitada="";
+//   let palabrasAcertadas= 0;
+//   let palabrasCorrectas=[];
+//   let palabrasIncorrectas=[];
+//   let arregloLetraDigitada=[];
+//   let palabraSel;
 
-//configuracion inicial.
-//Reset valores preestablecidos
-const mensaje = document.querySelector(".mensaje");
-mensaje.innerHTML="";
+    /* ***************************************** */
+    //configuracion inicial.
+  const ocultarBotones = document.getElementById("botonesMenuP");
+    //divMensaje.innerHTML.
+  
+  const btnIniciarJuego = document.querySelector(".btnIniciarJuego");
+  //Reset valores preestablecidos
+  const mensaje = document.querySelector(".mensaje");
+  mensaje.innerHTML="";
+  
+  const btnNuevoJuego = document.querySelector(".btnNuevoJuego");
+  const btnDesistir= document.querySelector(".btnDesistir");
 
-//colocar base del mastil de la horca.
-const dibujAhorcado = document.getElementById("hombre");
-dibujAhorcado.src= "imagenes/0" + vidas + ".png";
+  //colocar base del mastil de la horca.
+  const dibujAhorcado = document.getElementById("hombre");
+  dibujAhorcado.src= "imagenes/0" + vidas + ".png";
 
-const template=document.querySelector(".adivinado");
-template.innerHTML = "";
+  let template=document.querySelector(".letrasCorrectas");
+  template.innerHTML = "";
 
-//remover eventoEventListener
-const terminarJuego=()=>{
-    document.removeEventListener('keydown', letraPulsada);
-};
+  let temp=document.querySelector(".letrasErradas");
+  temp.innerHTML = "";
+
+  //remover eventoEventListener
+  const terminarJuego=()=>{
+      document.removeEventListener('keydown', letraPulsada);
+  };
 /****************************************** */
-
 //disminuir el numero de vidas establecidas
 //Dibujar el estado del ahorcado segun las vidas establecidas
 //generar mensaje de fin de juego, si vidas=0
@@ -36,13 +47,13 @@ const restarVidas = ()=>{
     dibujAhorcado.src= "imagenes/0" + vidas + ".png";
     if (vidas===0) {
         terminarJuego();
-        mensaje.innerHTML="Fin del juego! 🤪";
+        mensaje.innerHTML="Fin del juego! 🤪, la palabra es: " + palabraSel;
     }
 }
 
 //dibujar letra que no pertenecen a la palabra a adivinar
 const letraErrada = () =>{
-    template = document.querySelector(".errado");
+    template = document.querySelector(".letrasErradas");
     template.innerHTML="";
     for(let letra of palabrasIncorrectas){
         let span = document.createElement("span");
@@ -58,7 +69,7 @@ const letraErrada = () =>{
 const letraCorrecta = ()=>{
     const palabra = palabraSeleccionada;
     
-    let template=document.querySelector(".adivinado");
+    let template=document.querySelector(".letrasCorrectas");
     template.innerHTML="";
     palabrasAcertadas = 0;
     for(let letra of palabra){
@@ -73,7 +84,7 @@ const letraCorrecta = ()=>{
         template.appendChild(span);
     }
     
-    if(palabrasAcertadas=== palabra.length) {
+    if(palabrasAcertadas === palabra.length) {
         mensaje.innerHTML="Ganaste, felicidades! 😀";
         terminarJuego();
     } 
@@ -104,11 +115,56 @@ const letraPulsada = event => {
 //Selecciona aleatoriamente, una palabra de la base de palabras prestablecidas.
 const selectAleatorioPalabra = () => {
     let palabra = arregloPalabras[Math.floor((Math.random() * arregloPalabras.length))].toUpperCase();
+    palabraSel=palabra;
     palabraSeleccionada = palabra.split('');
+    
 }
 
-//Ejecucion del juego del ahoracado
-selectAleatorioPalabra();
-letraCorrecta("");
-document.addEventListener('keydown', letraPulsada);
+const nuevoJuego = () => {
+    //Definir variables
+    palabraSeleccionada="";
+    vidas = 6;
+    letraDigitada="";
+    palabrasAcertadas= 0;
+    palabrasCorrectas=[];
+    palabrasIncorrectas=[];
+    arregloLetraDigitada=[];
+    palabraSel="";
+    
+    ocultarBotones.style.display="none";
 
+    //ocultar elemetos del tablero    
+    document.getElementById("hombreAhorcado").style.display="";
+    document.querySelector(".letrasCorrectas").style.display="";
+    document.querySelector(".letrasErradas").style.display="";
+    document.querySelector(".botones").style.display="";
+    //reset
+    dibujAhorcado.src= "imagenes/0" + vidas + ".png";
+    mensaje.innerHTML="";//limpiar mensaje gana o pierde
+
+    let temp=document.querySelector(".letrasErradas");
+    temp.innerHTML = "";
+    
+    selectAleatorioPalabra();
+    letraCorrecta("");  
+    
+    document.addEventListener('keydown', letraPulsada);
+}
+
+const desistir = ()=>{
+     //regresar al menu anterior
+    ocultarBotones.style.display="";
+    
+    //ocultar elemetos del tablero    
+    mensaje.innerHTML="";
+    document.getElementById("hombreAhorcado").style.display="none";
+    document.querySelector(".letrasCorrectas").style.display="none";
+    document.querySelector(".letrasErradas").style.display="none";
+    document.querySelector(".botones").style.display="none";
+}
+
+desistir();
+
+btnNuevoJuego.addEventListener('click', nuevoJuego);
+btnDesistir.addEventListener('click', desistir);
+btnIniciarJuego.addEventListener('click', nuevoJuego);

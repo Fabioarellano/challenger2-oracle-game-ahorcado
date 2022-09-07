@@ -5,6 +5,37 @@ header {
     margin:0;
     color:#0a3871;
 }
+
+.fam{
+  /* text-align:right; */
+  position: relative;
+  font-style: italic;
+  left: 60%;
+  font-size: 20px;
+}
+
+.tituloJuego {
+  font-size: 26px;
+  font-style:italic;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.btnIniciarJuego {
+  display:block; 
+  margin-left: 40%;
+  padding: 5rem;
+
+  /* justify-content: middle; */
+}
+.btnAgrerarPalabra{
+  display:block; 
+  margin-left: 40%;
+  padding: 5rem;
+  margin-top: 1rem;
+  /* justify-content: middle; */
+  
+}
 html {
     font-size: 16px;
   }
@@ -43,7 +74,7 @@ body {
     height: 16.75rem;
 }
 
-.adivinado {
+.letrasCorrectas {
     text-align: center;
     color: #002462;
     font-size: 1.8rem;
@@ -57,12 +88,12 @@ body {
 .adivinada, #colocaletraAcertada {
     width: 4.5rem;
     height: 4.5rem;
-    border-bottom: solid 1px #002462;
+    border-bottom: solid 2px #002462;
     margin-left: 0.4rem;
     line-height: 4.5rem;
   }
   
-  .errado {
+  .letrasErradas {
     text-align:  center;
     margin-top: 1rem;
     color: rgb(235, 14, 25);
@@ -80,10 +111,12 @@ body {
   .mensaje{
     text-align:center;
     /* margin-left: 680; */
-    font-size: 40px;
+    font-size: 30px;
     color: #0a3871;
     font-style: italic;
   }
+ 
+  .hidden {display:none}
 /* #home::after{
     content:"Hombre ahorcado"; }*/
     [type="button"] {
@@ -96,13 +129,28 @@ body {
         cursor: pointer;
       }
       
-      .btn-azul {
+      .btnNuevoJuego, .btnIniciarJuego {
         background-color: #0a3871;
         color: #fff;
         border-color: #000;
       }
       
-      .botones {
+      .btnNuevoJuego:hover, .btnIniciarJuego:hover {
+        background-color: #0a3871;
+        color:#fff;
+        border: solid 2px ;
+        border-color:rgb(46, 201, 248);
+        font-size: 1rem;
+      } 
+
+      .btnDesistir:hover, .btnAgrerarPalabra:hover {
+        color:black;
+        border: solid 2px ;
+        border-color:rgb(46, 201, 248);
+        font-size: 1rem;
+      } 
+      .botones,#botonesMenuP {
         text-align: center;
         margin-top: 3rem;
       }
+

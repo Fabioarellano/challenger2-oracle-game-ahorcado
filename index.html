@@ -10,21 +10,39 @@
   </head>
   <body>
     <header>
-        a
+        <span>a</span>
+        <span class="fam">Powered by: Fabio Arellano</span>
     </header>
     <main>
+      
+        <div id="botonesMenuP">
+          <!-- <input type="button" class="btnIniciarJuego" value="Iniciar juego" />
+          <input type="button" class="btnAgrerarPalabra" value="Agrerar Palabra" /> -->
+          <div class="tituloJuego">   Juego del ahorcado</div>
+          <button type="button" class="btnIniciarJuego" value="Iniciar juego">Iniciar Juego</button>
+          <button type="button" class="btnAgrerarPalabra" value="Agrerar Palabra">Agregar Palabra</button>
+        </div>  
+      
         <div class="mensaje">
           <!-- //colocar mensaje de Gano o perdio -->
         </div>
         <div id="hombreAhorcado" >
           <img src="imagenes/06.png" alt="Juego del ahorcado" id="hombre">
         </div>
-        <div class="adivinado">
+        <!-- <div class="adivinado"> -->
+        <div class="letrasCorrectas">
           <!-- //colocar letras adivinadas -->
         </div>
-        <div class="errado">
+        <!-- <div class="errado"> -->
+        <div class="letrasErradas">
           <!-- //colocar letras que no pertenecen a la palabra a adivinar -->
         </div>
+        <!-- <form class="botones" action="javascript:void(0)" onclick="alert('hola')"> -->
+        <div class="botones" id="boton">
+          <input type="button" class="btnNuevoJuego" value="Nuevo juego" />
+          <input type="button" class="btnDesistir" value="Desistir" />
+        </div>    
+       <!-- </form> -->
       <script src="palabras.js"></script>
       <script src="juego.js"></script>
     </main>
