@@ -1,14 +1,7 @@
 
 //Definir variables
-//   let palabraSeleccionada="";
      let vidas = 6;
      let flag = false;
-//   let letraDigitada="";
-//   let palabrasAcertadas= 0;
-//   let palabrasCorrectas=[];
-//   let palabrasIncorrectas=[];
-//   let arregloLetraDigitada=[];
-//   let palabraSel;
 
     /* ***************************************** */
     //configuracion inicial.
@@ -34,6 +27,7 @@
 
   let temp=document.querySelector(".letrasErradas");
   temp.innerHTML = "";
+/* ****************************** */
 
   //remover eventoEventListener
   const terminarJuego=()=>{
@@ -118,11 +112,8 @@ const letraPulsada = event => {
 //Selecciona aleatoriamente, una palabra de la base de palabras prestablecidas.
 const selectAleatorioPalabra = () => {
     let palabra = arregloPalabras[Math.floor((Math.random() * arregloPalabras.length))].toUpperCase();
-    console.log("pp " + palabra);
     palabraSel=palabra;
     palabraSeleccionada = palabra.split('');
-    console.log("ppx " +palabraSeleccionada);
-    
 }
 
 //iniciar variables para nuevo juego
@@ -150,14 +141,12 @@ const nuevoJuego = () => {
 
     let temp=document.querySelector(".letrasErradas");
     temp.innerHTML = "";
-    console.log(flag);
+    
     if(flag){
         let palabra =arregloPalabras[arregloPalabras.length-1];
         palabraSel=palabra;
-        console.log(palabra);
         //palabraSeleccionada = palabra.split('');
         palabraSeleccionada = palabra.split('');
-        console.log(palabraSeleccionada)
         flag = false;
     }
     else {
@@ -173,7 +162,7 @@ const nuevoJuego = () => {
 const desistir = ()=>{
      //regresar al menu anterior
     ocultarBotones.style.display="";
-    //btnAgregarPalabra.
+  
     //ocultar elemetos del tablero    
     mensaje.innerHTML="";
     document.getElementById("hombreAhorcado").style.display="none";
@@ -182,23 +171,21 @@ const desistir = ()=>{
     document.querySelector(".botones").style.display="none";
 }
 
+//iniciar vista para agregarPalabra
 const mostrarMenuPalabra = ()=>{
     ocultarAgregarPalabras.style.display="";
     document.getElementById("agregarPalabra").value="";
 
     //ocultar menu principal
     document.getElementById("botonesMenuP").style.display="none";
+}
 
-    //main section--nuevaPalabra
-    //document.getElementById("main_agregarPalabra")      
-    
-  }
-
+//uso de la funcion desistir
 desistir();
 
+//escucha de eventos
 btnNuevoJuego.addEventListener('click', nuevoJuego);
 btnDesistir.addEventListener('click', desistir);
 btnIniciarJuego.addEventListener('click', nuevoJuego);
-
 btnAgregarPalabra.addEventListener('click',mostrarMenuPalabra);
 

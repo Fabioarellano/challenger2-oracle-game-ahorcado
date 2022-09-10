@@ -165,9 +165,10 @@ body {
         margin-top: 3rem;
       }
 
-      .txtxt {
-        display: block;
-        margin: auto;
+      .entradaPalabra {
+        display: flex;
+        align-items: center;
+        margin-top:  7rem;
       }
       #agregarPalabra{
        /* display: block; */
@@ -179,8 +180,8 @@ body {
         /* display: inline-flexbox; */
         text-align: center;
         color:red;
+        margin-left: 1%;
       }
-
       
       .main__section--nuevaPalabra {
         width: 15rem;
@@ -191,7 +192,31 @@ body {
         background: inherit; 
         border: none;
       }
+
+      .main__section__botones{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height:50%;
+        margin-bottom: 1%;
+        
+        margin-left: 30%;
+     }
+      /* .main__section__botones--styleBoton{
+        display: inline-flex;
+        align-items: center;
+      } */
+
+      .section__informacion{
+        margin-bottom: 1rem;
+        width: 100%;
+        height:50%;
+        margin-top: 20%;
+        margin-left: 30%;
+      }
+
       #main__section__botones--guardarEmpezar{
+        
         background-color: #0a3871;
         color: #fff;
         border-color: #000;
@@ -206,6 +231,12 @@ body {
         color: black;
       }
      
+      #main__section__botones--guardarEmpezar:hover{
+        font-size:18px;
+        border-color: rgb(97, 232, 239);
+      }
 
-      
-
+      #main__section__botones--cancelar:hover {
+        font-size:18px;
+        border-color:#002462;
+      }
