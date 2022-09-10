@@ -2,6 +2,7 @@
 //Definir variables
 //   let palabraSeleccionada="";
      let vidas = 6;
+     let flag = false;
 //   let letraDigitada="";
 //   let palabrasAcertadas= 0;
 //   let palabrasCorrectas=[];
@@ -11,8 +12,10 @@
 
     /* ***************************************** */
     //configuracion inicial.
+  const ocultarAgregarPalabra = document.querySelector(".main__agregarPalabra").style.display="none";
   const ocultarBotones = document.getElementById("botonesMenuP");
     //divMensaje.innerHTML.
+  const btnAgregarPalabra = document.querySelector(".btnAgregarPalabra");
   
   const btnIniciarJuego = document.querySelector(".btnIniciarJuego");
   //Reset valores preestablecidos
@@ -37,9 +40,9 @@
       document.removeEventListener('keydown', letraPulsada);
   };
 /****************************************** */
-//disminuir el numero de vidas establecidas
-//Dibujar el estado del ahorcado segun las vidas establecidas
-//generar mensaje de fin de juego, si vidas=0
+//disminuir el numero de vidas establecidas.
+//Dibujar el estado del ahorcado segun las vidas establecidas.
+//generar mensaje de fin de juego, si vidas=0.
 const restarVidas = ()=>{
     
     vidas--; 
@@ -115,11 +118,14 @@ const letraPulsada = event => {
 //Selecciona aleatoriamente, una palabra de la base de palabras prestablecidas.
 const selectAleatorioPalabra = () => {
     let palabra = arregloPalabras[Math.floor((Math.random() * arregloPalabras.length))].toUpperCase();
+    console.log("pp " + palabra);
     palabraSel=palabra;
     palabraSeleccionada = palabra.split('');
+    console.log("ppx " +palabraSeleccionada);
     
 }
 
+//iniciar variables para nuevo juego
 const nuevoJuego = () => {
     //Definir variables
     palabraSeleccionada="";
@@ -144,17 +150,30 @@ const nuevoJuego = () => {
 
     let temp=document.querySelector(".letrasErradas");
     temp.innerHTML = "";
-    
-    selectAleatorioPalabra();
+    console.log(flag);
+    if(flag){
+        let palabra =arregloPalabras[arregloPalabras.length-1];
+        palabraSel=palabra;
+        console.log(palabra);
+        //palabraSeleccionada = palabra.split('');
+        palabraSeleccionada = palabra.split('');
+        console.log(palabraSeleccionada)
+        flag = false;
+    }
+    else {
+        selectAleatorioPalabra();
+    }    
+
     letraCorrecta("");  
-    
+
     document.addEventListener('keydown', letraPulsada);
 }
+
 
 const desistir = ()=>{
      //regresar al menu anterior
     ocultarBotones.style.display="";
-    
+    //btnAgregarPalabra.
     //ocultar elemetos del tablero    
     mensaje.innerHTML="";
     document.getElementById("hombreAhorcado").style.display="none";
@@ -163,8 +182,23 @@ const desistir = ()=>{
     document.querySelector(".botones").style.display="none";
 }
 
+const mostrarMenuPalabra = ()=>{
+    ocultarAgregarPalabras.style.display="";
+    document.getElementById("agregarPalabra").value="";
+
+    //ocultar menu principal
+    document.getElementById("botonesMenuP").style.display="none";
+
+    //main section--nuevaPalabra
+    //document.getElementById("main_agregarPalabra")      
+    
+  }
+
 desistir();
 
 btnNuevoJuego.addEventListener('click', nuevoJuego);
 btnDesistir.addEventListener('click', desistir);
 btnIniciarJuego.addEventListener('click', nuevoJuego);
+
+btnAgregarPalabra.addEventListener('click',mostrarMenuPalabra);
+

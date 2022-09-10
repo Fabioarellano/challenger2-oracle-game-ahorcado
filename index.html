@@ -11,17 +11,31 @@
   <body>
     <header>
         <span>a</span>
-        <span class="fam">Powered by: Fabio Arellano</span>
+        <span class="fam">Dev: Fabio Arellano</span>
     </header>
     <main>
       
-        <div id="botonesMenuP">
-          <!-- <input type="button" class="btnIniciarJuego" value="Iniciar juego" />
-          <input type="button" class="btnAgrerarPalabra" value="Agrerar Palabra" /> -->
-          <div class="tituloJuego">   Juego del ahorcado</div>
-          <button type="button" class="btnIniciarJuego" value="Iniciar juego">Iniciar Juego</button>
-          <button type="button" class="btnAgrerarPalabra" value="Agrerar Palabra">Agregar Palabra</button>
-        </div>  
+      <section class="main__agregarPalabra">
+       <div class="txtxt">
+        <input type="text" id="agregarPalabra" class="main__section--nuevaPalabra" placeholder="escriba una palabra" />
+        <p class="validarMensaje">sss</p>
+      </div>  
+        <div class="main__section__botones">
+          <p>🛈 Máx. 8 caracteres</p>
+           <div class="main__section__botones--styleBoton">
+             <button type="button" id="main__section__botones--guardarEmpezar">Guardar y empezar</button>
+             <button type="button" id="main__section__botones--cancelar">Cancelar</button>
+           </div>
+         </div>
+      </section>
+         
+          <div id="botonesMenuP">
+            <div class="tituloJuego">Juego del ahorcado</div>
+            <button type="button" class="btnIniciarJuego" value="Iniciar juego">Iniciar Juego</button>
+              <!-- <a href = "./agregarPalabra.html">  -->
+            <button  type="button" class="btnAgregarPalabra" value="Agrerar Palabra" >Agregar Palabra</button>
+
+          </div>  
       
         <div class="mensaje">
           <!-- //colocar mensaje de Gano o perdio -->
@@ -37,14 +51,17 @@
         <div class="letrasErradas">
           <!-- //colocar letras que no pertenecen a la palabra a adivinar -->
         </div>
-        <!-- <form class="botones" action="javascript:void(0)" onclick="alert('hola')"> -->
+        
         <div class="botones" id="boton">
           <input type="button" class="btnNuevoJuego" value="Nuevo juego" />
           <input type="button" class="btnDesistir" value="Desistir" />
         </div>    
+
+
        <!-- </form> -->
       <script src="palabras.js"></script>
       <script src="juego.js"></script>
+      <script src="agregarPalabra.js"></script>
     </main>
   </body>
 </html>

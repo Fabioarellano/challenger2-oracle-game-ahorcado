@@ -18,21 +18,23 @@ header {
   font-size: 26px;
   font-style:italic;
   font-weight: bold;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 .btnIniciarJuego {
-  display:block; 
+  /* display:block;  */
   margin-left: 40%;
-  padding: 5rem;
+  margin-bottom: 1rem;
 
   /* justify-content: middle; */
 }
-.btnAgrerarPalabra{
-  display:block; 
+.btnAgregarPalabra{
+  display:block;  
   margin-left: 40%;
-  padding: 5rem;
-  margin-top: 1rem;
+  padding: 1rem;
+  
+  text-decoration:none;
+  color: black;
   /* justify-content: middle; */
   
 }
@@ -127,12 +129,13 @@ body {
         color: #0a3871;
         background: inherit;
         cursor: pointer;
-      }
+    }
       
       .btnNuevoJuego, .btnIniciarJuego {
         background-color: #0a3871;
         color: #fff;
         border-color: #000;
+        
       }
       
       .btnNuevoJuego:hover, .btnIniciarJuego:hover {
@@ -143,14 +146,66 @@ body {
         font-size: 1rem;
       } 
 
-      .btnDesistir:hover, .btnAgrerarPalabra:hover {
+      .btnDesistir:hover, .btnAgregarPalabra:hover {
         color:black;
         border: solid 2px ;
         border-color:rgb(46, 201, 248);
         font-size: 1rem;
+        text-decoration:none;
+        color: black;
       } 
       .botones,#botonesMenuP {
+     
+        /* text-align: left; */
+        margin-top: 3rem;
+      }
+   
+      .botones {
         text-align: center;
         margin-top: 3rem;
       }
+
+      .txtxt {
+        display: block;
+        margin: auto;
+      }
+      #agregarPalabra{
+       /* display: block; */
+        margin-left: 35%;
+
+      }
+      
+      .validarMensaje {
+        /* display: inline-flexbox; */
+        text-align: center;
+        color:red;
+      }
+
+      
+      .main__section--nuevaPalabra {
+        width: 15rem;
+        padding: 1rem;
+        font-size: 16px;
+        color: #002462;
+        border-radius: 1rem;
+        background: inherit; 
+        border: none;
+      }
+      #main__section__botones--guardarEmpezar{
+        background-color: #0a3871;
+        color: #fff;
+        border-color: #000;
+      }
+
+      #main__section__botones--cancelar {
+        color:black;
+        border: solid 2px ;
+        border-color:rgb(46, 201, 248);
+        font-size: 1rem;
+        text-decoration:none;
+        color: black;
+      }
+     
+
+      
 
