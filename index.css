@@ -248,3 +248,154 @@ body {
  
  
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header {
+      /* text-align:left;
+      font-size: 90px;
+      
+      padding-left: 210px;
+      margin:0;
+      color:#0a3871; */
+      /* display:flex; */
+      padding: 1rem;
+
+  } 
+
+  .cabecera{
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+  /* align-items: center; */
+    align-content: center;
+    justify-content: center;
+  }
+
+  .fam{
+    position:absolute;
+    font-style: italic;
+    /* left: 60%; */
+    font-size: 1rem;
+  }
+
+  .tituloJuego{
+    padding:2rem;  
+    font-size: 1.25rem;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+      width: 70%;
+
+  }
+
+  [type="button"] {
+    /* width: 15rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: solid 1px #0a3871;
+    color: #0a3871;
+    background: inherit;
+    cursor: pointer; */
+
+    /* margin-left: 4.5rem; */
+    justify-items: center;
+    /* display:flex;
+    flex-direction: row;
+    align-items: center; */
+}
+
+
+.btnNuevoJuego, .btnIniciarJuego {
+  background-color: #0a3871;
+  color: #fff;
+  border-color: #000;
+  margin: 0.2rem;
+}
+
+.adivinada, #colocaletraAcertada {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: solid 2px #002462;
+  margin-left: 0.4rem;
+  line-height: 1.5rem;
+}
+
+.letrasErradas {
+  text-align: center;
+  margin-top: 1rem;
+  color: rgb(235, 14, 25);
+  font-weight: bold;
+  font-size: 30px;
+}
+.mensaje {
+  /* text-align: center; */
+  font-size: 1.2rem;
+  
+}
+
+.menuBoton{
+  display:flex;
+  flex-direction:column;
+  margin: 0;
+  padding:2rem;
+}
+
+.btnIniciarJuego {
+  /* display:block;  */
+  margin-left: 10%;
+  margin-bottom: 1rem;
+
+  /* justify-content: middle; */
+}
+.btnAgregarPalabra{
+  display:block;  
+  margin-left: 10%;
+  padding: 1rem;
+  
+  text-decoration:none;
+  color: black;
+  /* justify-content: middle; */
+  
+}
+
+.letrasErradas {
+  text-align:  center;
+  margin-top: 1rem;
+  color: rgb(235, 14, 25);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#main__section__botones--guardarEmpezar{
+        
+  /* background-color: #0a3871;
+  color: #fff;
+  border-color: #000; */
+  margin-bottom: 00.2rem;
+}
+
+.main__section__botones--styleBoton{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+
+  .main__section__botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%;
+    height: 50%; */
+    margin-bottom: 1%;
+    margin-left: 5%;
+}
+
+#agregarPalabra {
+  /* display: block; */
+  margin-left: auto;
+}
+
+}
