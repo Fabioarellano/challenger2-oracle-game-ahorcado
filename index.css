@@ -240,3 +240,11 @@ body {
         font-size:18px;
         border-color:#002462;
       }
+.input__tecla--nuevaPalabra{
+ outline: none; 
+ border:0;
+ background: inherit;
+ /* color:#F3F5FC; */
+ 
+ 
+}
