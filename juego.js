@@ -154,8 +154,9 @@ const nuevoJuego = () => {
     }    
 
     letraCorrecta("");  
-
+    
     document.addEventListener('keydown', letraPulsada);
+    keepFocus();
 }
 
 
@@ -183,6 +184,12 @@ const mostrarMenuPalabra = ()=>{
     document.getElementById("botonesMenuP").style.display="none";
 }
 
+const keepFocus=()=> {
+    const txtKey = document.querySelector(".input__tecla--nuevaPalabraM");
+    txtKey.focus();
+}
+
+
 //uso de la funcion desistir
 desistir();
 
@@ -191,4 +198,4 @@ btnNuevoJuego.addEventListener('click', nuevoJuego);
 btnDesistir.addEventListener('click', desistir);
 btnIniciarJuego.addEventListener('click', nuevoJuego);
 btnAgregarPalabra.addEventListener('click',mostrarMenuPalabra);
-
+// keepFocus.addEventListener('keypress',keepFocus);
