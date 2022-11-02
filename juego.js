@@ -165,6 +165,8 @@ const desistir = ()=>{
   
     //ocultar elemetos del tablero    
     mensaje.innerHTML="";
+    document.querySelector(".inputTecla").style.display="none"; //nueva linea
+    palabraSeleccionada="" //verficar
     document.getElementById("hombreAhorcado").style.display="none";
     document.querySelector(".letrasCorrectas").style.display="none";
     document.querySelector(".letrasErradas").style.display="none";
@@ -173,6 +175,7 @@ const desistir = ()=>{
 
 //iniciar vista para agregarPalabra
 const mostrarMenuPalabra = ()=>{
+    terminarJuego();
     ocultarAgregarPalabras.style.display="";
     document.getElementById("agregarPalabra").value="";
 

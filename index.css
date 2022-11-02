@@ -241,9 +241,11 @@ body {
         border-color:#002462;
       }
 .input__tecla--nuevaPalabra{
+  display:none;
  outline: none; 
  border:0;
- background: inherit;
+  background: inherit; 
+ /* background: red; */
  /* color:#F3F5FC; */
  
  
@@ -252,19 +254,13 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     header {
-      /* text-align:left;
-      font-size: 90px;
       
-      padding-left: 210px;
-      margin:0;
-      color:#0a3871; */
-      /* display:flex; */
-      padding: 1rem;
+      padding: 0.5rem;
 
   } 
 
   .cabecera{
-    font-size: 5rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
   /* align-items: center; */
@@ -280,8 +276,8 @@ body {
   }
 
   .tituloJuego{
-    padding:2rem;  
-    font-size: 1.25rem;
+      padding:1rem;  
+      font-size: 1.25rem;
       font-style: italic;
       font-weight: bold;
       text-align: center;
@@ -290,19 +286,9 @@ body {
   }
 
   [type="button"] {
-    /* width: 15rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    border: solid 1px #0a3871;
-    color: #0a3871;
-    background: inherit;
-    cursor: pointer; */
 
-    /* margin-left: 4.5rem; */
     justify-items: center;
-    /* display:flex;
-    flex-direction: row;
-    align-items: center; */
+
 }
 
 
@@ -393,9 +379,30 @@ body {
     margin-left: 5%;
 }
 
-#agregarPalabra {
-  /* display: block; */
-  margin-left: auto;
+
+.input__tecla--nuevaPalabra{
+  display:flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  background:#ccf678;
+  color:rgb(64, 17, 236);
+  width: 9rem;
+  height:2rem;
+  border-radius: 1rem;
+}
+
+#agregarPalabra{
+  /* margin: auto; */
+  /* margin-left: 5.1rem; */
+}
+
+#hombreAhorcado {
+  /* width: 100vw;
+  text-align: center; */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* height: 16.75rem; */
 }
 
 }
